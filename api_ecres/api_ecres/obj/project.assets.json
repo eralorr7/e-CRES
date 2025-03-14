@@ -11896,11 +11896,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nurizzatul\\Desktop\\Sistem e-CRES\\ecres\\api_ecres\\api_ecres\\api_ecres.csproj",
+      "projectUniqueName": "C:\\Users\\nurizzatul\\Desktop\\Sistem ecres\\e-CRES\\api_ecres\\api_ecres\\api_ecres.csproj",
       "projectName": "api_ecres",
-      "projectPath": "C:\\Users\\nurizzatul\\Desktop\\Sistem e-CRES\\ecres\\api_ecres\\api_ecres\\api_ecres.csproj",
+      "projectPath": "C:\\Users\\nurizzatul\\Desktop\\Sistem ecres\\e-CRES\\api_ecres\\api_ecres\\api_ecres.csproj",
       "packagesPath": "C:\\Users\\nurizzatul\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nurizzatul\\Desktop\\Sistem e-CRES\\ecres\\api_ecres\\api_ecres\\obj\\",
+      "outputPath": "C:\\Users\\nurizzatul\\Desktop\\Sistem ecres\\e-CRES\\api_ecres\\api_ecres\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

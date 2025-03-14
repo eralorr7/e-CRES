@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XFjr/7qXsvOCLYZp2RxYpXGWgil5X59VuqwDT4kBGgwo+LyWK3iE9eTPDJhq8kJQcJ2AszHdcEGbH6lUHwaw/Q==",
+  "dgSpecHash": "rLzI/J+1TXMkFeBjNZBkF7vUhkF1sgIY/TalY8KY7Apoxx9LgL4MgA1SWciEXiAJFaJz6I0bkz45li4jbWHgAQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nurizzatul\\Desktop\\Sistem e-CRES\\ecres\\api_ecres\\api_ecres\\api_ecres.csproj",
+  "projectFilePath": "C:\\Users\\nurizzatul\\Desktop\\Sistem ecres\\e-CRES\\api_ecres\\api_ecres\\api_ecres.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nurizzatul\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\nurizzatul\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

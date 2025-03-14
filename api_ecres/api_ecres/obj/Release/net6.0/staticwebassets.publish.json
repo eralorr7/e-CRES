@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "kVMsxUbLrG6gi2xn+S8fPuG/0yKFB22GnGEuqGrmzEs=",
+  "Hash": "k4ujHolinEFOPPMcEiT6dHZ1gIwP3wNY/A23T/uJJBU=",
   "Source": "api_ecres",
   "BasePath": "_content/api_ecres",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "api_ecres\\wwwroot",
       "Source": "api_ecres",
-      "ContentRoot": "C:\\Users\\nurizzatul\\Desktop\\Sistem e-CRES\\ecres\\api_ecres\\api_ecres\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\nurizzatul\\Desktop\\Sistem ecres\\e-CRES\\api_ecres\\api_ecres\\wwwroot\\",
       "BasePath": "_content/api_ecres",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\nurizzatul\\Desktop\\Sistem e-CRES\\ecres\\api_ecres\\api_ecres\\wwwroot\\userManual\\1_",
+      "Identity": "C:\\Users\\nurizzatul\\Desktop\\Sistem ecres\\e-CRES\\api_ecres\\api_ecres\\wwwroot\\userManual\\1_",
       "SourceId": "api_ecres",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\nurizzatul\\Desktop\\Sistem e-CRES\\ecres\\api_ecres\\api_ecres\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\nurizzatul\\Desktop\\Sistem ecres\\e-CRES\\api_ecres\\api_ecres\\wwwroot\\",
       "BasePath": "_content/api_ecres",
       "RelativePath": "userManual/1_",
       "AssetKind": "All",
