@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\nurizzatul\\Desktop\\Sistem e-CRES\\ecres\\api_ecres\\api_ecres\\wwwroot\\userManual\\1_",
+      "PackagePath": "staticwebassets\\userManual"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.api_ecres.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.build.api_ecres.props",
+      "PackagePath": "build\\api_ecres.props"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.api_ecres.props",
+      "PackagePath": "buildMultiTargeting\\api_ecres.props"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.buildTransitive.api_ecres.props",
+      "PackagePath": "buildTransitive\\api_ecres.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

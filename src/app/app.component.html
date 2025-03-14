@@ -1,0 +1,75 @@
+<!-- <app-toolbar></app-toolbar>
+
+<div id="layoutSidenav">
+  <div id="layoutSidenav_nav">
+    <app-sidenav></app-sidenav>
+  </div>
+
+  <div id="layoutSidenav_content">
+    <main>
+      <div class="container-fluid px-1">
+        <router-outlet></router-outlet>
+      </div>
+    </main>
+  </div>
+</div> -->
+
+
+<div *ngIf="isLoggin || isAuthRoute">
+  <ng-container *ngIf="isLoggin; else forgotOrResetContent">
+    <app-toolbar></app-toolbar>
+
+    <div id="layoutSidenav">
+      <div id="layoutSidenav_nav">
+        <app-sidenav></app-sidenav>
+      </div>
+
+      <div id="layoutSidenav_content">
+        <main>
+          <div class="container-fluid px-1 pt-4">
+            <router-outlet></router-outlet>
+          </div>
+        </main>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-template #forgotOrResetContent>
+    <router-outlet></router-outlet>
+  </ng-template>
+</div>
+
+<div *ngIf="!isLoggin && !isAuthRoute">
+  <app-login *ngIf="loginPage"></app-login>
+</div>
+
+
+
+
+
+<!-- <div *ngIf="isLoggin">
+  
+  <app-toolbar></app-toolbar>
+  
+    <div id="layoutSidenav">
+      <div id="layoutSidenav_nav">
+        <app-sidenav></app-sidenav>
+      </div>
+  
+      <div id="layoutSidenav_content">
+        <main>
+          <div class="container-fluid px-1 pt-4">
+            <router-outlet></router-outlet>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+  
+  <div *ngIf="!isLoggin">
+
+
+    <app-login *ngIf="loginPage"></app-login>
+    <router-outlet></router-outlet>
+  </div> -->
+

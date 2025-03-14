@@ -1,0 +1,319 @@
+<div class="container mb-3">
+    <mat-card class="shadow p-3 mb-5 ml-0 pl-1 bg-white rounded">
+        <mat-card-content>
+            <h1 class="attractive-title">Contract Registration</h1>
+            <p>PLEASE FILL IN THE SECTION BELOW</p><br>
+
+            <form>
+
+                <div class="row flex d-flex content-fluid mb-3">
+                    <div class="col-lg-1">
+                        <label class="label_title">
+                            Type Of Trade<span class="required" style="color:red;">*</span>
+                        </label><br>
+                    </div>
+                    <div class="col-lg-5">
+                        <mat-radio-group aria-label="Select an option" [(ngModel)]="ecres.trade" id="trade" name="trade"
+                            class="radio-group-flex">
+                            <mat-radio-button value="Local">Local</mat-radio-button>
+                            <mat-radio-button value="Oversea">Oversea</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+
+                    <div class="col-lg-1">
+                        <label class="label_title">
+                            Type Of Contract<span class="required" style="color:red;">*</span>
+                        </label><br>
+                    </div>
+                    <div class="col-lg-5">
+                        <mat-radio-group [(ngModel)]="ecres.contractType" id="contractType" name="contractType"
+                            aria-label="Select an option" class="radio-group-flex">
+                            <mat-radio-button *ngFor="let contractType of contractTypes"
+                                [value]="contractType.contractType">
+                                {{ contractType.contractType }}
+                            </mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                </div>
+
+
+
+                <div class="row flex d-flex content-fluid mb-3">
+                    <div class="col-lg-1">
+                        <label class="label_title">Contract No<span class="required"
+                                style="color:red;">*</span></label><br>
+                    </div>
+                    <div class="col-lg-5">
+                        <input type="text" class="form-control" id="contractNo" name="contractNo"
+                            [(ngModel)]="ecres.contractNo"
+                            matTooltip="Serial number in the agreed contract or purchase order."
+                            matTooltipPosition="above" matTooltipShowDelay="50">
+                    </div>
+
+
+                    <div class="col-lg-1">
+                        <label class="label_title">Date Of Contract<span class="required"
+                                style="color:red;">*</span></label><br>
+                    </div>
+                    <div class="col-lg-5">
+                        <input type="date" class="form-control" id="contractDate" [(ngModel)]="ecres.contractDate"
+                            name="contractDate" (change)="onContractDateChange($event)" required />
+                        <div *ngIf="isSubmitDisabled" class="error-message">
+                            **The key-in date is only allowed on the contract date or within five working days following
+                            the contract date!**
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row flex d-flex content-fluid mb-3">
+                    <div class="col-lg-1">
+                        <label class="label_title">Shipment/ Delivery Month<span class="required"
+                                style="color:red;">*</span></label><br>
+                    </div>
+                    <div class="col-lg-3">
+                        <select class="form-select" id="shipmentId" name="shipmentId" [(ngModel)]="ecres.shipmentId"
+                            (ngModelChange)="onShipmentIdChange($event)">
+                            <option value="" disabled selected>--Please Select--</option>
+                            <option *ngFor="let shipment of shipments" [value]="shipment.shipmentId">
+                                {{shipment.shipmentType}}
+                            </option>
+                        </select>
+                        <small class="instruction">
+                            *i. Spot month: Physical delivery within same month of contract date<br>
+                            ii. Current month: First deliverable month after spot month<br>
+                            iii. Forward month: Second deliverable month and onwards after current month<br>
+                            iv. Long Term Contract<br>
+                        </small>
+                    </div>
+
+
+                    <div class="col-lg-1">
+                        <label class="label_title">Month/year<span class="required"
+                                style="color:red;">*</span></label><br>
+                    </div>
+                    <div class="col-lg-3">
+                        <mat-form-field appearance="fill">
+                            <mat-label style="color: black;">{{ecres.month1}}</mat-label>
+                            <input matInput [matDatepicker]="picker1" placeholder="MM/YYYY" [(ngModel)]="ecres.month1"
+                                name="month1" id="month1">
+                            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                            <mat-datepicker #picker1 startView="multi-year"
+                                (monthSelected)="chosenYearHandler($event, picker1)" panelClass="example-month-picker">
+                            </mat-datepicker>
+                        </mat-form-field>
+                    </div>
+
+
+                    <div class="col-lg-1" *ngIf="ecres.shipmentId == 4">
+                        <label class="label_title">To month/year<span class="required"
+                                style="color:red;">*</span></label><br>
+                    </div>
+                    <div class="col-lg-3" *ngIf="ecres.shipmentId == 4">
+                        <mat-form-field appearance="fill">
+                            <mat-label style="color: black;">{{ecres.month2}}</mat-label>
+                            <input matInput [matDatepicker]="picker2" placeholder="MM/YYYY" [(ngModel)]="ecres.month2"
+                                name="month2">
+                            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                            <mat-datepicker #picker2 startView="multi-year"
+                                (monthSelected)="chosenYearHandler2($event, picker2)" panelClass="example-month-picker">
+                            </mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+
+
+                <div class="row flex d-flex content-fluid mb-3">
+                    <div class="col-lg-1">
+                        <label class="label_title">Type of Rubber/Grade<span class="required"
+                                style="color:red;">*</span></label><br>
+                    </div>
+
+                    <div class="col-lg-5">
+                        <div class="d-flex flex-wrap">
+                            <div class="form-check me-2" *ngFor="let rubberType of rubberTypes">
+                                <input type="checkbox" class="form-check-input" [value]="rubberType.rubberId"
+                                    (change)="onRubberSelectionChange($event, rubberType.rubberId)"
+                                    [checked]="selectedRubberIds.includes(rubberType.rubberId.toString())" />
+                                <label class="form-check-label">{{ rubberType.rubberType }}</label>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-lg-1">
+                        <label class="label_title">Shipping Term<span class="required"
+                                style="color:red;">*</span></label><br>
+                    </div>
+                    <div class="col-lg-5">
+                        <select class="form-select" id="shipmentTermId" name="shipmentTermId"
+                            [(ngModel)]="ecres.shipmentTermId" (ngModelChange)="onShipmentTerm($event)">
+                            <option value="" disabled selected>--Please Select--</option>
+                            <option *ngFor="let shipmentTerm of shipmentTerms" [value]="shipmentTerm.shipmentTermId">
+                                {{shipmentTerm.shipmentTerm}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+
+
+
+                <div class="row flex d-flex content-fluid mb-3">
+
+                    <div class="col-lg-1" *ngIf="selectedRubberIds.includes('4')">
+                    </div>
+                    <div class="col-lg-5" *ngIf="selectedRubberIds.includes('4')">
+                        <input type="text" class="form-control" id="remarksCentrifugedLatex"
+                            name="remarksCentrifugedLatex" [(ngModel)]="ecres.remarksCentrifugedLatex"
+                            [required]="selectedRubberIds.includes('4')">
+                        <p class="instruction text-danger">
+                            For Centrifuged latex, please specify either High Ammonia (HA) or Low Ammonia (LA) or premium grade as well as
+                            type of packaging (Flexi bag, tank container, or drum) in the drum "remarks".
+                        </p>
+                    </div>
+
+
+
+                    <div class="col-lg-1" *ngIf="ecres.shipmentTermId == 3"> </div>
+
+                    <div class="col-lg-5" *ngIf="ecres.shipmentTermId == 3">
+                        <input type="text" class="form-control" id="otherShippingTerm" name="otherTerm"
+                            [(ngModel)]="ecres.otherTerm">
+                        <p class=" instruction text-danger">Please state other terms used for shipping.</p>
+                    </div>
+                </div>
+
+
+
+                <div class="row flex d-flex content-fluid mb-3">
+                    <div class="col-lg-1">
+                        <label class="label_title">Quantity<span class="required"
+                                style="color:red;">*</span></label><br>
+                    </div>
+                    <div class="col-lg-5 d-flex align-items-center">
+                        <input type="number" id="quantity" [(ngModel)]="ecres.quantity" name="quantity" required
+                            class="form-control" style="flex: 1; margin-right: 8px;" />
+                        <div class="col-lg-1">
+                            <label class="label_title">Unit<span class="required"
+                                    style="color:red;">*</span></label><br>
+                        </div>
+                        <select placeholder="unit" [(ngModel)]="ecres.unit" name="unit" class="form-control"
+                            style="width: auto;">
+                            <option value="" disabled selected>Unit</option> <!-- Placeholder for the select -->
+                            <option value="Tonne">Tonne</option>
+                            <option value="Kg">Kg</option>
+                        </select>
+                    </div>
+
+
+
+                    <div class="col-lg-1">
+                        <div *ngIf="ecres.contractType !== 'Purchase' && ecres.contractType !== 'Sales'">
+                            <label class="label_title">Seller/Buyer<span class="required"
+                                    style="color:red;">*</span></label><br>
+                        </div>
+                        <div *ngIf="ecres.contractType === 'Purchase'">
+                            <label class="label_title">Seller<span class="required"
+                                    style="color:red;">*</span></label><br>
+                        </div>
+                        <div *ngIf="ecres.contractType === 'Sales'">
+                            <label class="label_title">Buyer<span class="required"
+                                    style="color:red;">*</span></label><br>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <input type="text" class="form-control" id="buyerSeller" name="buyerSeller"
+                            [(ngModel)]="ecres.buyerSeller">
+                    </div>
+                </div>
+
+
+
+                <div class="row flex d-flex content-fluid mb-3">
+                    <div class="col-lg-1">
+                        <label class="label_title">Price<span class="required" style="color:red;">*</span></label><br>
+                    </div>
+                    <div class="col-lg-3">
+                        <mat-radio-group aria-label="Select an option" [(ngModel)]="ecres.currency" id="currency"
+                            name="currency">
+                            <mat-radio-button value="USD">USD</mat-radio-button>
+                            <mat-radio-button value="MYR">MYR</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+
+
+
+                    <div class="col-lg-1">
+                        <label class="label_title">Contract Price<span class="required" style="color:red;">*</span></label><br>
+                    </div>
+                    <div class="col-lg-3">
+                        <input type="text" class="form-control" id="price" name="price" placeholder="RM 0.00"
+                            (input)="addDecimal($event)" [(ngModel)]="ecres.price">
+                    </div>
+
+
+
+                    <div class="col-lg-1">
+                        <label class="label_title">Price Equivalent<span class="required" style="color:red;">*</span></label><br>
+                    </div>
+                    <div class="col-lg-3">
+                        <input type="text" class="form-control" id="priceEquivalent" name="priceEquivalent"
+                            placeholder="RM 0.00" (input)="addPriceEquivalent($event)"
+                            [(ngModel)]="ecres.priceEquivalent">
+                        <small class="instruction">Please provide price equivalent to Centrifuged Latex (60% DRC), ISO
+                            2004, FOB</small>
+                    </div>
+                </div>
+
+
+
+                <div class="row flex d-flex content-fluid mb-3">
+                    <div class="col-lg-1">
+                        <label class="label_title">Place/Factory<span class="required"
+                                style="color:red;">*</span></label><br>
+                    </div>
+                    <div class="col-lg-5">
+                        <input type="text" class="form-control" id="placeFactoryPort" name="placeFactoryPort"
+                            [(ngModel)]="ecres.placeFactoryPort" [matTooltip]="tooltipContent" matTooltipShowDelay="50"
+                            matTooltipClass="custom-tooltip">
+                    </div>
+
+
+
+                    <div class="col-lg-1">
+                        <label class="label_title">Destination<span class="required"
+                                style="color:red;">*</span></label><br>
+                    </div>
+                    <div class="col-lg-5">
+                        <input type="text" class="form-control" id="destination" name="destination"
+                            [(ngModel)]="ecres.destination" [matTooltip]="tooltipDestination" matTooltipShowDelay="50"
+                            matTooltipClass="custom-tooltip">
+                    </div>
+                </div>
+
+
+                <div align="end">
+                    <button type="button" class="btn btn-warning mb-2 me-2" (click)="onDraft()"
+                        [disabled]="!isSubmitEnabled" [disabled]="isDraftDisabled"
+                        style="background-color: #ffc107; color: black;">
+                        Save
+                    </button>
+                    <button type="submit" class="btn btn-success mb-2 me-2" (click)="onSubmit()"
+                        [disabled]="!isSubmitEnabled" [disabled]="isSubmitClicked" [disabled]="isSubmitDisabled"
+                        style="background-color: #28a745; color: white;">
+                        Submit
+                    </button>
+
+                    <div *ngIf="!isSubmitEnabled" class="error-message">
+                        **You cannot submit because the duration has exceeded 3 days from the admin approval.**
+                    </div>
+
+                </div>
+
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

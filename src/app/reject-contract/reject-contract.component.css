@@ -1,0 +1,25 @@
+.table-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+}
+
+.centered-table {
+    margin: auto; /* Center the table */
+    width: 100%; /* Optional: make the table responsive */
+    max-width: 800px; /* Optional: limit max width */
+}
+
+
+.centered-table th, .centered-table td {
+    text-align: center;
+  }
+  
+  .centered-table th.mat-header-cell {
+    font-weight: bold;
+  }
+  
+  .centered-table .mat-row, .centered-table .mat-header-row {
+    display: flex;
+    justify-content: center;
+  }
+  

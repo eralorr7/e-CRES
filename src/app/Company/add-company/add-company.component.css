@@ -1,0 +1,35 @@
+.disabled-input:disabled {
+    background-color: #f0f0f0;  /* Light grey background for the input box */
+    color: black;               /* Keep the text color black */
+    font-size: 0.875rem;        /* Make the text slightly smaller */
+    cursor: not-allowed;        /* Show the not-allowed cursor */
+    border: 1px solid #ccc;     /* Optional: make border slightly grey to match the disabled look */
+  }
+
+  .form-group {
+    display: flex;
+    align-items: center;
+  }
+  
+  .form-group label {
+    margin-right: 15px; /* Space between label and input */
+  }
+  
+  .form-group input {
+    margin-right: 10px; /* Space between input and button */
+   }
+  
+  .form-group button {
+    padding: 8px 20px;
+  }
+  
+
+  .custom-input {
+    width: 190px; /* Set the input width to your desired size */
+    font-size: 14px; /* Set the font size */
+  }
+
+  .custom-btn {
+    padding: 6px 12px; /* Adjust button padding */
+    font-size: 14px; /* Set the font size */
+  }

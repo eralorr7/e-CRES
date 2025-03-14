@@ -1,0 +1,44 @@
+<div class="container mb-3">
+
+  <mat-card class="shadow p-3 mb-5 bg-white rounded">
+    <mat-card-content>
+      <h2 class="mat-title">User Manuals</h2>
+
+      <div *ngIf="userManuals.length > 0; else noData">
+        <table mat-table [dataSource]="userManuals" class="mat-elevation-z8">
+          <ng-container matColumnDef="index">
+            <th mat-header-cell *matHeaderCellDef> Bil </th>
+            <td mat-cell *matCellDef="let userManual; let i = index"> {{ i + 1 }} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="fileName">
+            <th mat-header-cell *matHeaderCellDef> File Name </th>
+            <td mat-cell *matCellDef="let userManual">
+              <a class="custom-link" (click)="viewFile(userManual, userManual.userManual)">
+                {{ userManual.userManual }}
+              </a>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="edit">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let userManual">
+              <button mat-button color="primary" (click)="editUserManual(userManual)">
+                Edit
+              </button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="['index', 'fileName', 'edit']"></tr>
+          <tr mat-row *matRowDef="let row; columns: ['index', 'fileName', 'edit'];"></tr>
+        </table>
+      </div>
+
+      <ng-template #noData>
+        <p>No user manuals available.</p>
+      </ng-template>
+
+    </mat-card-content>
+  </mat-card>
+
+</div>

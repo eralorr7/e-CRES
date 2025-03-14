@@ -1,0 +1,198 @@
+<div class="container mb-3">
+  <mat-card>
+    <mat-card-content>
+      <h1 class="attractive-title">View Registered Contract</h1>
+      <div class="mat-card-container row">
+        <div class="col-md-6 shadow rounded p-5 mb-5">
+
+          <div class="row form-group">
+            <div class="col-sm-4">
+              <label class="label_bm">Type Of Contract</label><br>
+            </div>
+            <div class="col-sm-8">
+              <input type="text" class="form-control readonly-input" [value]="ecres.contractType" readonly>
+            </div>
+          </div><br>
+
+          <div class="row form-group">
+            <div class="col-sm-4">
+              <label class="label_bm">Company Name</label><br>
+            </div>
+            <div class="col-sm-8">
+              <input type="text" class="form-control readonly-input" [value]="ecres.companyName" readonly>
+            </div>
+          </div><br>
+
+          <div class="row form-group">
+            <div class="col-sm-4">
+              <label class="label_bm">Type of Trade</label><br>
+            </div>
+            <div class="col-sm-8">
+              <input type="text" class="form-control readonly-input" [value]="ecres.trade" readonly>
+            </div>
+          </div><br>
+
+
+          <div class="row form-group">
+            <div class="col-sm-4">
+              <label class="label_bm">Contract No</label><br>
+            </div>
+            <div class="col-sm-8">
+              <input type="text" class="form-control readonly-input" [value]="ecres.contractNo" readonly>
+            </div>
+          </div><br>
+
+          <div class="row form-group">
+            <div class="col-sm-4">
+              <label class="label_bm">Contract Date</label><br>
+            </div>
+            <div class="col-sm-8">
+              <input type="text" class="form-control readonly-input" [value]="ecres.contractDate | date: 'dd-MM-yyyy'"
+                readonly>
+            </div>
+          </div><br>
+
+          <div class="row form-group">
+            <div class="col-sm-4">
+              <label class="label_bm"> Shipment Type</label><br>
+            </div>
+            <div class="col-sm-8">
+              <input type="text" class="form-control readonly-input" [value]="ecres.shipmentType" readonly>
+            </div>
+          </div><br>
+
+          <div class="row form-group">
+            <div class="col-sm-4">
+              <label class="label_bm">Delivery Month (From)</label><br>
+            </div>
+            <div class="col-sm-8">
+              <input type="text" class="form-control readonly-input" [value]="ecres.month1" readonly>
+            </div>
+          </div><br>
+
+          <div class="row form-group">
+            <div class="col-sm-4">
+              <label class="label_bm">Delivery Month (To)</label><br>
+            </div>
+            <div class="col-sm-8">
+              <input type="text" class="form-control readonly-input" [value]="ecres.month2" readonly>
+            </div>
+          </div><br>
+
+          <div class="row form-group">
+            <div class="col-sm-4">
+              <label class="label_bm">Rubber Type</label><br>
+            </div>
+            <div class="col-sm-8">
+              <input type="text" class="form-control readonly-input" [value]="ecres.rubberType" readonly>
+            </div>
+          </div><br>
+
+          <div class="row form-group">
+            <div class="col-sm-4">
+              <label class="label_bm">Remarks</label><br>
+            </div>
+            <div class="col-sm-8">
+              <input type="text" class="form-control readonly-input" [value]="ecres.remarksCentrifugedLatex" readonly>
+            </div>
+          </div><br>
+
+        </div>
+
+
+        <div class="col-md-6 shadow rounded p-5 mb-5">
+
+          <div class="row form-group">
+            <div class="col-sm-4">
+              <label class="label_bm">Quantity</label><br>
+            </div>
+            <div class="col-sm-6">
+              <input type="text" class="form-control readonly-input" [value]="ecres.quantity" readonly>
+            </div>
+            <div class="col-sm-2">
+              <input type="text" class="form-control readonly-input" [value]="ecres.unit" readonly>
+            </div>
+          </div><br>
+
+
+          <div class="row form-group">
+            <div class="col-sm-4">
+              <label class="label_bm">Currency</label><br>
+            </div>
+            <div class="col-sm-8">
+              <input type="text" class="form-control readonly-input" [value]="ecres.currency" readonly>
+            </div>
+          </div><br>
+
+          <div class="row form-group">
+            <div class="col-sm-4">
+              <label class="label_bm">Price</label><br>
+            </div>
+            <div class="col-sm-8">
+              <input type="text" class="form-control readonly-input" [value]="ecres.price" readonly>
+            </div>
+          </div><br>
+
+          <div class="row form-group">
+            <div class="col-sm-4">
+              <label class="label_bm">Price Equivalent (SMR20 FOB/Centrifuged Latex 60% DRC FOB)</label><br>
+            </div>
+            <div class="col-sm-8">
+              <input type="text" class="form-control readonly-input" [value]="ecres.priceEquivalent" readonly>
+            </div>
+          </div><br>
+
+          <div class="row form-group">
+            <div class="col-sm-4">
+              <label class="label_bm">Shipment Term</label><br>
+            </div>
+            <div class="col-sm-8">
+              <input type="text" class="form-control readonly-input" [value]="ecres.shipmentTerm" readonly>
+            </div>
+          </div><br>
+
+          <div class="row form-group">
+            <div class="col-sm-4">
+              <label class="label_bm">Others</label><br>
+            </div>
+            <div class="col-sm-8">
+              <input type="text" class="form-control readonly-input" [value]="ecres.otherTerm" readonly>
+            </div>
+          </div><br>
+
+          <div class="row form-group">
+            <div class="col-sm-4">
+              <label class="label_bm">Buyer/Seller</label><br>
+            </div>
+            <div class="col-sm-8">
+              <input type="text" class="form-control readonly-input" [value]="ecres.buyerSeller" readonly>
+            </div>
+          </div><br>
+
+
+          <div class="row form-group">
+            <div class="col-sm-4">
+              <label class="label_bm">Place/factory</label><br>
+            </div>
+            <div class="col-sm-8">
+              <input type="text" class="form-control readonly-input" [value]="ecres.placeFactoryPort" readonly>
+            </div>
+          </div><br>
+
+          <div class="row form-group">
+            <div class="col-sm-4">
+              <label class="label_bm">Destination</label><br>
+            </div>
+            <div class="col-sm-8">
+              <input type="text" class="form-control readonly-input" [value]="ecres.destination" readonly>
+            </div>
+          </div><br>
+
+          <div mat-dialog-actions align="end">
+            <button (click)="goBack()" class="btn btn-primary mr-5">Back</button>
+          </div>
+        </div><br>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

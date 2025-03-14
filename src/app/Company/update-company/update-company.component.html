@@ -1,0 +1,184 @@
+<div class="container mb-3">
+  <mat-card class="shadow p-3 mb-5 ml-0 pl-1 bg-white rounded">
+    <mat-card-content>
+      <h1 class="attractive-title">Update Company</h1>
+      <p>PLEASE FILL IN THE SECTION BELOW</p><br>
+
+      <form>
+
+          <div class="row flex d-flex content-fluid mb-3">
+            <div class="col-lg-1">
+              <label class="label_title">Company Name:</label><br>
+            </div>
+            <div class="col-lg-3">
+              <input type="text" class="form-control" id="companyName" name="companyName"
+              [(ngModel)]="company.companyName" disabled>
+            </div>
+
+            <div class="col-lg-1">
+              <label class="label_title">License No :</label><br>
+            </div>
+            <div class="col-lg-3">
+              <input type="text" class="form-control" id="licenseNo" name="licenseNo" [(ngModel)]="company.licenseNo" disabled>
+            </div>
+
+            <div class="col-lg-1">
+              <label class="label_title">License Category:</label><br>
+            </div>
+            <div class="col-lg-3">
+              <input type="text" class="form-control" id="licenseCategory" name="licenseCategory" [(ngModel)]="company.licenseCategory" disabled>
+            </div>
+          </div>
+
+  
+          <div class="row flex d-flex content-fluid mb-3">
+            <div class="col-lg-1">
+              <label class="label_title">Contact Number:</label><br>
+            </div>
+            <div class="col-lg-3">
+              <input type="text" class="form-control" id="contactNumber" name="contactNumber" [(ngModel)]="company.contactNumber" disabled>
+            </div>
+
+            <div class="col-lg-1">
+              <label class="label_title">Tel No:</label><br>
+            </div>
+            <div class="col-lg-3">
+              <input type="text" class="form-control" id="telNo" name="telNo" [(ngModel)]="company.telNo" disabled>
+            </div>
+
+            <div class="col-lg-1">
+              <label class="label_title">Fax No:</label><br>
+            </div>
+            <div class="col-lg-3">
+              <input type="text" class="form-control" id="faxNo" name="faxNo" [(ngModel)]="company.faxNo" disabled>
+            </div>
+          </div>
+
+
+
+          <div class="row flex d-flex content-fluid mb-3">
+            <div class="col-lg-1">
+              <label class="label_title">Pic</label><span class="required" style="color:red;">*</span><br>
+            </div>
+            <div class="col-lg-3">
+              <input type="text" class="form-control" id="pic" name="pic" [(ngModel)]="company.pic">
+            </div>
+
+            <div class="col-lg-1">
+              <label class="label_title">Email1:<span class="required" style="color:red;">*</span></label><br>
+            </div>
+            <div class="col-lg-3">
+              <input type="text" class="form-control" id="email1" name="email1" [(ngModel)]="company.email1">
+            </div>
+
+            <div class="col-lg-1">
+              <label class="label_title">Email:</label><br>
+            </div>
+            <div class="col-lg-3">
+             <input type="text" class="form-control" id="email" name="email" [(ngModel)]="company.email" disabled>
+            </div>
+          </div>
+
+
+          <div class="row flex d-flex content-fluid mb-3">
+            <div class="col-lg-1">
+              <label class="label_title">Address 1:<span class="required" style="color:red;">*</span></label><br>
+            </div>
+            <div class="col-lg-5">
+              <input type="text" class="form-control disabled-input" [value]="company.add1" disabled />
+            </div>
+
+            <div class="col-lg-1">
+              <label class="label_title">Address 2:</label><br>
+            </div>
+
+            <div class="col-lg-5">
+              <input type="text" class="form-control disabled-input" [value]="company.add2" disabled />
+            </div>
+          </div>
+
+
+
+          <div class="row flex d-flex content-fluid mb-3">
+            <div class="col-lg-1">
+              <label class="label_title">Address 3:</label><br>
+            </div>
+            <div class="col-lg-5">
+              <input type="text" class="form-control disabled-input" [value]="company.add3" disabled />
+            </div>
+
+            <div class="col-lg-1">
+              <label class="label_title">Rubber Grade :</label><br>
+            </div>
+
+            <div class="col-lg-5">
+              <input type="text" class="form-control" id="rubberGrade" name="rubberGrade"
+                [(ngModel)]="company.rubberGrade">
+            </div>
+          </div>
+
+
+
+          <div class="row flex d-flex content-fluid mb-3">
+            <div class="col-lg-1">
+              <label class="label_title">Postcode:</label><br>
+            </div>
+            <div class="col-lg-3">
+              <input type="text" class="form-control disabled-input" [value]="company.postcode" disabled />
+            </div>
+
+            <div class="col-lg-1">
+              <label class="label_title">Town:</label><br>
+            </div>
+            <div class="col-lg-3">
+              <input type="text" class="form-control disabled-input" [value]="company.town" disabled />
+            </div>
+
+            <div class="col-lg-1">
+              <label class="label_title">State:</label><br>
+            </div>
+            <div class="col-lg-3">
+              <input type="text" class="form-control disabled-input" [value]="company.state" disabled />
+
+            </div>
+          </div>
+
+
+          <div class="row flex d-flex content-fluid mb-3">
+            <div class="col-lg-1">
+              <label class="label_title">Type:</label><br>
+            </div>
+            <div class="col-lg-3">
+              <input type="text" class="form-control" id="type" name="type" [(ngModel)]="company.type">
+            </div>
+
+            <div class="col-lg-1">
+            <label class="label_title">Username:<span class="required" style="color:red;">*</span></label><br>
+            </div>
+            <div class="col-lg-3">
+              <input type="text" class="form-control" id="username" name="username" [(ngModel)]="company.username" disabled>
+            </div>
+
+            <div class="col-lg-1">
+              <label class="label_title">Status:<span class="required" style="color:red;">*</span></label><br>
+            </div>
+            <div class="col-lg-3">
+              <mat-radio-group aria-label="Select an option" [(ngModel)]="company.status" id="status" name="status">
+                <mat-radio-button [value]="true">Aktif</mat-radio-button>
+                <mat-radio-button [value]="false">Tidak Aktif</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </div>
+
+        <!-- Submit Button -->
+        <div align="end">
+          <button type="submit" class="btn btn-success mb-2 me-2" (click)="onSubmit()"
+            style="background-color: #28a745; color: white;">
+            Submit
+          </button>
+
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

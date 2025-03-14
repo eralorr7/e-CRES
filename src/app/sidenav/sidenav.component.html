@@ -1,0 +1,232 @@
+<nav class="sb-sidenav accordion bg-opacity-80" id="sidenavAccordion" style="background-color: #2a69f1">
+    <div class="sb-sidenav-menu">
+        <div class="nav">
+            <div class="sb-sidenav-footer">
+                <div class="small">Log Masuk Sebagai: {{company.username}}{{userMre.username}}</div>
+
+            </div>
+            <div class="sb-sidenav-menu-heading">Menu</div>
+            <!-- <a class="nav-link" routerLink="Home">
+                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                Dashboard
+            </a> -->
+            <a class="nav-link" routerLink="/home">
+                <div class="sb-nav-link-icon"><i class="fas fa-home"></i></div>
+                Homepage
+            </a>
+            <div class="sb-sidenav-menu-heading">Modul</div>
+            <!-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts"
+                aria-expanded="false" aria-controls="collapseLayouts">
+                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                Belian Bulanan
+                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+            </a>
+            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
+                data-bs-parent="#sidenavAccordion">
+                <nav class="sb-sidenav-menu-nested nav">
+                    <a class="nav-link" [routerLink]="['/UserList']">Senarai Pengguna</a>
+                </nav>
+            </div>
+            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
+                data-bs-parent="#sidenavAccordion">
+                <nav class="sb-sidenav-menu-nested nav">
+                    <a class="nav-link" routerLink="TaxList">Senarai Cukai</a>
+                </nav>
+            </div>
+            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
+                data-bs-parent="#sidenavAccordion">
+                <nav class="sb-sidenav-menu-nested nav">
+                    <a class="nav-link" routerLink="Home">Senarai Getah</a>
+                </nav>
+            </div>
+            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages"
+                aria-expanded="false" aria-controls="collapsePages">
+                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                Pengurusan
+                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+            </a>
+            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo"
+                data-bs-parent="#sidenavAccordion">
+                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                        data-bs-target="#pagesCollapseAuth" aria-expanded="false"
+                        aria-controls="pagesCollapseAuth">
+                        Pengguna
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne"
+                        data-bs-parent="#sidenavAccordionPages">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link" routerLink="Login">Log Masuk</a>
+                            <a class="nav-link" routerLink="Register">Daftar Pengguna</a>
+                            <a class="nav-link" routerLink="404">Ubah Katalaluan</a>
+                        </nav>
+                    </div>
+                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                        data-bs-target="#pagesCollapseError" aria-expanded="false"
+                        aria-controls="pagesCollapseError">
+                        Ralat
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne"
+                        data-bs-parent="#sidenavAccordionPages">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link" routerLink="404">404</a>
+                            <a class="nav-link" routerLink="500">500</a>
+                        </nav>
+                    </div>
+                </nav>
+            </div> -->
+
+            <div *ngIf="role === 'user'">
+            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapse1"
+                aria-expanded="false" aria-controls="collapse1">
+                <div class="sb-nav-link-icon"><i class="fa-solid fa-file-signature"></i></div>
+                Contract Registration
+                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+            </a>
+            <div class="collapse" id="collapse1" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                <nav class="sb-sidenav-menu-nested nav">
+
+                    <a class="nav-link" routerLink="/addContract"><i class="fa-solid fa-plus"></i>&nbsp;&nbsp;&nbsp;Add
+                        Contract</a>
+
+                    <a class="nav-link" routerLink="/draft"><i class="fa-solid fa-pencil"></i>
+                        &nbsp;&nbsp;&nbsp;Draft</a>
+                    <a class="nav-link" routerLink="/registeredContract"><i class="fa-solid fa-list"></i>
+                        &nbsp;&nbsp;&nbsp;Registered List</a>
+                </nav>
+            </div>
+            </div>
+
+
+
+            <div *ngIf="role === 'admin'">
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapse2"
+                    aria-expanded="false" aria-controls="collapse2">
+                    <div class="sb-nav-link-icon"><i class="fa-regular fa-building"></i></div>
+                    Company
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="collapse2" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+
+                        <a class="nav-link" routerLink="/addCompany"><i class="fa-solid fa-plus"></i>&nbsp;&nbsp;&nbsp;
+                            Add Company</a>
+                        <a class="nav-link" routerLink="/companyList"><i class="fa-solid fa-list"></i>
+                            &nbsp;&nbsp;&nbsp;List Company</a>
+
+                    </nav>
+                </div>
+            </div>
+
+
+
+            <!-- <a class="nav-link" routerLink="/addContract">
+                <div class="sb-nav-link-icon"><i class="fa-solid fa-plus"></i></div>
+                Add Contract
+            </a>
+
+            <a class="nav-link" routerLink="/draft">
+                <div class="sb-nav-link-icon"><i class="fa-solid fa-pencil"></i></div>
+                Draft
+            </a>
+
+
+            <a class="nav-link" routerLink="/registeredContract">
+                <div class="sb-nav-link-icon"><i class="fa-solid fa-list"></i></div>
+                Registered Contract
+            </a> -->
+
+            <div *ngIf="role === 'user'">
+            <a class="nav-link" routerLink="/changePassword">
+                <div class="sb-nav-link-icon"><i class="fa-solid fa-unlock-keyhole"></i></div>
+                Change Password
+            </a>
+            </div>
+
+            <div *ngIf="role === 'user'">
+            <a class="nav-link" routerLink="/userManual"  (click)="viewFile(userManuals, userManuals.userManual)">
+                <div class="sb-nav-link-icon"><i class="fa-solid fa-file"></i></div>
+                User Manual
+            </a>
+            </div>
+
+            <!-- <a class="nav-link" routerLink="/addCompany">
+                <div class="sb-nav-link-icon"><i class="fa-solid fa-plus"></i></div>
+                Add Company
+            </a>
+
+            <a class="nav-link" routerLink="/companyList">
+                <div class="sb-nav-link-icon"><i class="fa-solid fa-list"></i></div>
+                List Company
+            </a> -->
+
+            <div *ngIf="role === 'admin'">
+            <a class="nav-link" routerLink="/addUserManual">
+                <div class="sb-nav-link-icon"><i class="fa-solid fa-plus"></i></div>
+                Upload User Manual
+            </a>
+
+            <a class="nav-link" routerLink="/listContract">
+                <div class="sb-nav-link-icon"><i class="fa-solid fa-list"></i></div>
+                Registered List
+            </a>
+
+
+            <a class="nav-link" routerLink="/rejectContract">
+                <div class="sb-nav-link-icon"><i class="fa-solid fa-file-circle-xmark"></i></div>
+                Reject Contract
+            </a>
+
+            </div>
+
+            <a class="nav-link" (click)="openLogoutDialog()">
+                <div class="sb-nav-link-icon"><i class="fa-solid fa-right-from-bracket"></i></div>
+                Logout
+            </a>
+
+
+            <!-- <a class="nav-link" routerLink="/showUserManual">
+                <div class="sb-nav-link-icon"><i class="fa-solid fa-list"></i></div>
+                Show User Manual
+            </a> -->
+
+
+
+            <!-- <a class="nav-link" href="charts.html">
+                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                Belian 
+            </a>
+
+            <a class="nav-link" href="charts.html">
+                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+               Jualan
+            </a>
+
+            <a class="nav-link" href="charts.html">
+                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                Belian Pengguna
+            </a>
+
+            <a class="nav-link" href="charts.html">
+                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                Belian Pembahagian
+            </a> -->
+
+
+            <!-- <div class="sb-sidenav-menu-heading">Addons</div>
+            <a class="nav-link" href="charts.html">
+                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                Charts
+            </a>
+            <a class="nav-link" href="tables.html">
+                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                Tables
+            </a> -->
+
+        </div>
+    </div>
+
+
+</nav>

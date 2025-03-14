@@ -1,0 +1,10 @@
+<div class="row form-group" *ngIf="userManuals && userManuals.userManual">
+  <div class="col-sm-4">
+    <label class="label_bm">User Manual</label><br>
+  </div>
+  <div class="col-sm-8">
+    <a class="custom-link" (click)="viewFile(userManuals, userManuals.userManual)">
+      {{ userManuals.userManual }}
+    </a>
+  </div>
+</div><br>

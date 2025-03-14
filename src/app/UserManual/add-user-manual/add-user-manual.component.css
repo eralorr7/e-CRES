@@ -1,0 +1,21 @@
+table {
+    width: 100%;
+  }
+  
+  .mat-header-row {
+    background-color: #f5f5f5; /* Light grey for header */
+  }
+  
+  .mat-header-cell, .mat-cell {
+    padding: 16px; /* Adjust padding */
+  }
+  
+  .custom-link {
+    color: #1976d2; /* Custom link color */
+    text-decoration: none; /* Remove underline */
+  }
+  
+  .custom-link:hover {
+    text-decoration: underline; /* Add underline on hover */
+  }
+  

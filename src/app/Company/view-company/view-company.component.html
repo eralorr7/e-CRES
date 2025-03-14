@@ -1,0 +1,178 @@
+<div class="container mb-3">
+  <mat-card>
+    <mat-card-content>
+      <h1 class="attractive-title">View Company</h1>
+      <div class="mat-card-container row">
+        <div class="col-md-6 shadow rounded p-5 mb-5">
+
+          <div class="row form-group">
+            <div class="col-sm-4">
+              <label class="label_bm">Company Name</label><br>
+            </div>
+            <div class="col-sm-8">
+              <input type="text" class="form-control readonly-input " [value]="company.companyName" readonly>
+            </div>
+          </div><br>
+
+          <div class="row form-group">
+            <div class="col-sm-4">
+              <label class="label_bm">License No</label><br>
+            </div>
+            <div class="col-sm-8">
+              <input type="text" class="form-control readonly-input" [value]="company.licenseNo" readonly>
+            </div>
+          </div><br>
+
+          <div class="row form-group">
+            <div class="col-sm-4">
+              <label class="label_bm">Type</label><br>
+            </div>
+            <div class="col-sm-8">
+              <input type="text" class="form-control readonly-input" [value]="company.type" readonly>
+            </div>
+          </div><br>
+
+          <div class="row form-group">
+            <div class="col-sm-4">
+              <label class="label_bm">Address 1</label><br>
+            </div>
+            <div class="col-sm-8">
+              <input type="text" class="form-control readonly-input" [value]="company.add1" readonly>
+            </div>
+          </div><br>
+
+          <div class="row form-group">
+            <div class="col-sm-4">
+              <label class="label_bm">Address 2</label><br>
+            </div>
+            <div class="col-sm-8">
+              <input type="text" class="form-control readonly-input" [value]="company.add2" readonly>
+            </div>
+          </div><br>
+
+          <div class="row form-group">
+            <div class="col-sm-4">
+              <label class="label_bm">Address 3</label><br>
+            </div>
+            <div class="col-sm-8">
+              <input type="text" class="form-control readonly-input" [value]="company.add3" readonly>
+            </div>
+          </div><br>
+
+          <div class="row form-group">
+            <div class="col-sm-4">
+              <label class="label_bm">Postcode</label><br>
+            </div>
+            <div class="col-sm-8">
+              <input type="text" class="form-control readonly-input" [value]="company.postcode" readonly>
+            </div>
+          </div><br>
+
+          <div class="row form-group">
+            <div class="col-sm-4">
+              <label class="label_bm">Town</label><br>
+            </div>
+            <div class="col-sm-8">
+              <input type="text" class="form-control readonly-input" [value]="company.town" readonly>
+            </div>
+          </div><br>
+
+          <div class="row form-group">
+            <div class="col-sm-4">
+              <label class="label_bm">State</label><br>
+            </div>
+            <div class="col-sm-8">
+              <input type="text" class="form-control readonly-input" [value]="company.state" readonly>
+            </div>
+          </div><br>
+
+        </div>
+
+
+        <div class="col-md-6 shadow rounded p-5 mb-5">
+
+          <div class="row form-group">
+            <div class="col-sm-4">
+              <label class="label_bm">Rubber Grade</label><br>
+            </div>
+            <div class="col-sm-8">
+              <input type="text" class="form-control readonly-input" [value]="company.rubberGrade" readonly>
+            </div>
+          </div><br>
+
+          <div class="row form-group">
+            <div class="col-sm-4">
+              <label class="label_bm">Contact Number</label><br>
+            </div>
+            <div class="col-sm-8">
+              <input type="text" class="form-control readonly-input" [value]="company.contactNumber" readonly>
+            </div>
+          </div><br>
+
+          <div class="row form-group">
+            <div class="col-sm-4">
+              <label class="label_bm">Tel No</label><br>
+            </div>
+            <div class="col-sm-8">
+              <input type="text" class="form-control readonly-input" [value]="company.telNo" readonly>
+            </div>
+          </div><br>
+
+          <div class="row form-group">
+            <div class="col-sm-4">
+              <label class="label_bm">Fax No</label><br>
+            </div>
+            <div class="col-sm-8">
+              <input type="text" class="form-control readonly-input" [value]="company.faxNo" readonly>
+            </div>
+          </div><br>
+
+          <div class="row form-group">
+            <div class="col-sm-4">
+              <label class="label_bm">Pic</label><br>
+            </div>
+            <div class="col-sm-8">
+              <input type="text" class="form-control readonly-input" [value]="company.pic" readonly>
+            </div>
+          </div><br>
+
+
+          <div class="row form-group">
+            <div class="col-sm-4">
+              <label class="label_bm"> Email</label><br>
+            </div>
+            <div class="col-sm-8">
+              <input type="text" class="form-control readonly-input" [value]="company.email" readonly>
+            </div>
+          </div><br>
+
+
+          <div class="row form-group">
+            <div class="col-sm-4">
+              <label class="label_bm">Email 1</label><br>
+            </div>
+            <div class="col-sm-8">
+              <input type="text" class="form-control readonly-input" [value]="company.email1" readonly>
+            </div>
+          </div><br>
+
+          <div class="row form-group">
+            <div class="col-sm-4">
+              <label class="label_bm">Username</label><br>
+            </div>
+            <div class="col-sm-8">
+              <input type="text" class="form-control readonly-input" [value]="company.username" readonly>
+            </div>
+          </div><br>
+
+
+          <div mat-dialog-actions align="end">
+            <button (click)="goBack()" class="btn btn-primary mr-5">Back</button>
+          </div>
+
+        </div><br>
+        
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

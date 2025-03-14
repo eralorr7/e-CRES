@@ -1,0 +1,202 @@
+<div class="container mb-3">
+  <mat-card class="shadow p-3 mb-5 ml-0 pl-1 bg-white rounded">
+    <mat-card-content>
+
+
+      <form class="search-form" (submit)="searchLicense()">
+        <div class="form-group d-flex align-items-center">
+          <label for="licenseNo" class="mr-3">Enter License No:</label>
+          <input type="text" id="licenseNo" [(ngModel)]="licenseNo" name="licenseNo"
+            class="form-control custom-input mr-3" placeholder="Enter License No" required />
+          <button type="submit" class="btn btn-primary custom-btn">Search</button>
+        </div>
+      </form><br><br>
+
+
+      <form>
+        <div *ngIf="errorMessage" class="error-container">
+          <p class="error">{{ errorMessage }}</p>
+        </div>
+
+        <div *ngIf="licenseData" class="result-container">
+
+          <div class="row flex d-flex content-fluid mb-3">
+            <div class="col-lg-1">
+              <label class="label_title">Company Name:</label><br>
+            </div>
+            <div class="col-lg-3">
+              <input type="text" class="form-control disabled-input" [value]="licenseData.companyName" disabled />
+            </div>
+
+            <div class="col-lg-1">
+              <label class="label_title">License No :</label><br>
+            </div>
+            <div class="col-lg-3">
+              <input type="text" class="form-control disabled-input" [value]="licenseData.licenseNo" disabled />
+            </div>
+
+            <div class="col-lg-1">
+              <label class="label_title">License Category:</label><br>
+            </div>
+            <div class="col-lg-3">
+              <input type="text" class="form-control disabled-input" [value]="licenseData.licenseCategory" disabled />
+            </div>
+          </div>
+
+
+
+          <div class="row flex d-flex content-fluid mb-3" *ngIf="premiseData">
+            <div class="col-lg-1">
+              <label class="label_title">Contact Number:</label><br>
+            </div>
+            <div class="col-lg-3">
+              <input type="text" class="form-control disabled-input" [value]="premiseData.mobileNo" disabled />
+            </div>
+
+            <div class="col-lg-1">
+              <label class="label_title">Tel No:</label><br>
+            </div>
+            <div class="col-lg-3">
+              <input type="text" class="form-control disabled-input" [value]="premiseData.phoneNo" disabled />
+            </div>
+
+            <div class="col-lg-1">
+              <label class="label_title">Fax No:</label><br>
+            </div>
+            <div class="col-lg-3">
+              <input type="text" class="form-control disabled-input" [value]="premiseData.fax" disabled />
+            </div>
+          </div>
+
+
+
+          <div class="row flex d-flex content-fluid mb-3" *ngIf="premiseData">
+            <div class="col-lg-1">
+              <label class="label_title">Pic</label><span class="required" style="color:red;">*</span><br>
+            </div>
+            <div class="col-lg-3">
+              <input type="text" class="form-control" id="pic" name="pic" [(ngModel)]="company.pic">
+            </div>
+
+            <div class="col-lg-1">
+              <label class="label_title">Email1:<span class="required" style="color:red;">*</span></label><br>
+            </div>
+            <div class="col-lg-3">
+              <input type="text" class="form-control" id="email1" name="email1" [(ngModel)]="company.email1">
+            </div>
+
+            <div class="col-lg-1">
+              <label class="label_title">Email:</label><br>
+            </div>
+            <div class="col-lg-3">
+              <input type="text" class="form-control disabled-input" [value]="premiseData.email" disabled />
+            </div>
+          </div>
+
+
+
+          <div class="row flex d-flex content-fluid mb-3" *ngIf="premiseData">
+            <div class="col-lg-1">
+              <label class="label_title">Address 1:<span class="required" style="color:red;">*</span></label><br>
+            </div>
+            <div class="col-lg-5">
+              <input type="text" class="form-control disabled-input" [value]="premiseData.add1" disabled />
+            </div>
+
+            <div class="col-lg-1">
+              <label class="label_title">Address 2:</label><br>
+            </div>
+
+            <div class="col-lg-5">
+              <input type="text" class="form-control disabled-input" [value]="premiseData.add2" disabled />
+            </div>
+          </div>
+
+
+
+          <div class="row flex d-flex content-fluid mb-3" *ngIf="premiseData">
+            <div class="col-lg-1">
+              <label class="label_title">Address 3:</label><br>
+            </div>
+            <div class="col-lg-5">
+              <input type="text" class="form-control disabled-input" [value]="premiseData.add3" disabled />
+            </div>
+
+            <div class="col-lg-1">
+              <label class="label_title">Rubber Grade :</label><br>
+            </div>
+
+            <div class="col-lg-5">
+              <input type="text" class="form-control" id="rubberGrade" name="rubberGrade"
+                [(ngModel)]="company.rubberGrade">
+            </div>
+          </div>
+
+
+
+          <div class="row flex d-flex content-fluid mb-3" *ngIf="premiseData">
+            <div class="col-lg-1">
+              <label class="label_title">Postcode:</label><br>
+            </div>
+            <div class="col-lg-3">
+              <input type="text" class="form-control disabled-input" [value]="premiseData.postcode" disabled />
+            </div>
+
+            <div class="col-lg-1">
+              <label class="label_title">Town:</label><br>
+            </div>
+            <div class="col-lg-3">
+              <input type="text" class="form-control disabled-input" [value]="premiseData.town" disabled />
+            </div>
+
+            <div class="col-lg-1">
+              <label class="label_title">State:</label><br>
+            </div>
+            <div class="col-lg-3">
+              <input type="text" class="form-control disabled-input" [value]="premiseData.state" disabled />
+
+            </div>
+          </div>
+
+
+
+          <div class="row flex d-flex content-fluid mb-3">
+            <div class="col-lg-1">
+              <label class="label_title">Type:</label><br>
+            </div>
+            <div class="col-lg-3">
+              <input type="text" class="form-control" id="type" name="type" [(ngModel)]="company.type">
+            </div>
+
+            <div class="col-lg-1">
+              <label class="label_title">Username:<span class="required" style="color:red;">*</span></label><br>
+            </div>
+            <div class="col-lg-3">
+              <input type="text" class="form-control" id="username" name="username" [(ngModel)]="company.username">
+            </div>
+
+            <div class="col-lg-1">
+              <label class="label_title">Status:<span class="required" style="color:red;">*</span></label><br>
+            </div>
+            <div class="col-lg-3">
+              <mat-radio-group aria-label="Select an option" [(ngModel)]="company.status" id="status" name="status">
+                <mat-radio-button [value]="true">Aktif</mat-radio-button>
+                <mat-radio-button [value]="false">Tidak Aktif</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </div>
+
+
+          <div align="end">
+            <button type="submit" class="btn btn-success mb-2 me-2" (click)="onSubmit()" [disabled]="isSubmitting"
+              style="background-color: #28a745; color: white;">
+              Submit
+            </button>
+          </div>
+
+        </div>
+      </form>
+
+    </mat-card-content>
+  </mat-card>
+</div>

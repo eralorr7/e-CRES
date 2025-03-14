@@ -1,0 +1,71 @@
+<div class="container mb-3">
+  <mat-card class="shadow p-4 mb-5 ml-0 pl-1 bg-white rounded">
+    <div class="mat-card-container">
+      <div class="header-container">
+        <h1 class="attractive-title">List Registered Contract</h1>
+
+        <mat-form-field appearance="fill" class="filter-field">
+          <mat-label>Filter</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="keyword" #input>
+        </mat-form-field>
+      </div>
+
+      <div style="text-align: right;">
+        <button type="submit" class="btn btn-success mb-2 me-2" (click)="exportToExcel()"
+          style="background-color: #28a745; color: white;">
+          Export To Excel
+        </button>
+      </div><br>
+
+      <div class="mat-elevation-z8">
+        <div class="list-container" class="table-responsive">
+          <table mat-table [dataSource]="dataSource" matSort class="centered-table">
+
+            <ng-container matColumnDef="contractId">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Contract Id </th>
+              <td mat-cell *matCellDef="let row"> {{row.contractId}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="contractType">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Contract Type </th>
+              <td mat-cell *matCellDef="let row"> {{row.contractType}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="companyName">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Company Name</th>
+              <td mat-cell *matCellDef="let row"> {{row.companyName}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="contractNo">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Contract No </th>
+              <td mat-cell *matCellDef="let row"> {{row.contractNo}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="contractDate">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Contract Date </th>
+              <td mat-cell *matCellDef="let row"> {{row.contractDate | date: 'dd-MM-yyyy' }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="action">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+              <td mat-cell *matCellDef="let row">
+                <button mat-icon-button color="black" (click)="view(row.contractId)" matTooltip="Semak">
+                  <mat-icon>remove_red_eye</mat-icon>
+                </button>
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="5">No data matching the filter "{{input.value}}"</td>
+            </tr>
+          </table>
+        </div>
+
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="20"></mat-paginator>
+      </div>
+    </div>
+  </mat-card>
+</div>

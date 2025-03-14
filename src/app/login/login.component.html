@@ -1,0 +1,38 @@
+<div class="background-image"></div>
+<div class="container">
+    <div class="banner">
+        <p class="title" align="center">Electronic Contract Reporting System (e-CRES)</p>
+    </div>
+    <img class="logo" src="assets/image/logoLGM.png" />
+    <h2 class="welcome">WELCOME</h2>
+    <p class="login-text">Login to e-CRES Online System</p>
+    <form class="form1">
+        <input class="un" type="text" align="center" placeholder="Username" name="username" ngModel [(ngModel)]="user.username">
+        <input class="pass" type="password" align="center" placeholder="Password" name="password" ngModel [(ngModel)]="user.password">
+        <br>
+        <!-- <a class="signin" align="center"  (click)="login()">Sign in</a><br> -->
+        <a class="signin" align="center" (click)="!isProcess && login()" [class.disabled]="isProcess">
+            Sign in
+        </a><br><br>
+
+        <a class="forgot-password" align="center" routerLink="/forgotPassword">Forgot Password?</a>
+    </form>
+    
+        <!-- Loading spinner -->
+        <div *ngIf="isProcess" class="loading-spinner">
+            <p>Still loading, please wait...</p>
+        </div>
+        
+
+    <!-- Section with grey background -->
+    <div class="clarification">
+        For further clarification, kindly contact Malaysian Rubber Exchange:<br>
+        Malaysian Rubber Exchange (MRE)<br>
+        Economics, Licensing & Enforcement Division<br>
+        Malaysian Rubber Board<br>
+        T: 03-92062092 | E: <a class="email" href="mailto:mre@lgm.gov.my">mre1@lgm.gov.my</a><br>
+        Ms Chuah Jia Min – T: 03-92062093 / E: <a class="email" href="mailto:jmchuah@lgm.gov.my">jmchuah@lgm.gov.my</a><br>
+        En Najmuddin – T: 03-92062172/2116 / E: <a class="email" href="mailto:najmuddin@lgm.gov.my">najmuddin@lgm.gov.my</a><br>
+    </div>
+    
+</div>

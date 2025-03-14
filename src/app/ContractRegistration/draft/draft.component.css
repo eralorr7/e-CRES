@@ -1,0 +1,14 @@
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.attractive-title {
+  margin: 0;
+}
+
+.filter-field {
+  width: 200px;
+}

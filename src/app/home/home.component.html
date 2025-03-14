@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="card">
+        <h3><b>
+            <span class="welcome">
+                WELCOME {{ company.companyName }}{{ userMre.name }} 
+                <span *ngIf="company.licenseNo">({{ company.licenseNo }})</span>
+            </span>
+        </b></h3>
+        <p class="timestamp">{{ today | date :'dd-MMM-yy h:mm:ss a' }}</p>
+    </div>
+</div>
