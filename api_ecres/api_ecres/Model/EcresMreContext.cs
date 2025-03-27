@@ -319,7 +319,7 @@ public partial class EcresMreContext : DbContext
 
         modelBuilder.Entity<TblContract>(entity =>
         {
-            entity.HasKey(e => e.ContractId).HasName("PK_tbl_contract0");
+            entity.HasKey(e => e.ContractId).HasName("PK_tbl_contract00_copy");
 
             entity.ToTable("tbl_contract");
 
@@ -395,7 +395,7 @@ public partial class EcresMreContext : DbContext
 
         modelBuilder.Entity<TblContract1>(entity =>
         {
-            entity.HasKey(e => e.ContractId).HasName("PK_tbl_contract");
+            entity.HasKey(e => e.ContractId).HasName("PK_tbl_contract0");
 
             entity.ToTable("tbl_contract1");
 
@@ -452,7 +452,9 @@ public partial class EcresMreContext : DbContext
             entity.Property(e => e.ResubmitDate)
                 .HasColumnType("datetime")
                 .HasColumnName("resubmit_date");
-            entity.Property(e => e.RubberId).HasColumnName("rubber_id");
+            entity.Property(e => e.RubberId)
+                .HasMaxLength(50)
+                .HasColumnName("rubber_id");
             entity.Property(e => e.ShipmentId).HasColumnName("shipment_id");
             entity.Property(e => e.ShipmentTermId).HasColumnName("shipment_term_id");
             entity.Property(e => e.StatusId).HasColumnName("statusId");

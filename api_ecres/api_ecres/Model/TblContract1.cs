@@ -23,7 +23,7 @@ public partial class TblContract1
 
     public string? BuyerSeller { get; set; }
 
-    public int? RubberId { get; set; }
+    public string? RubberId { get; set; }
 
     public string? RemarksCentrifugedLatex { get; set; }
 
