@@ -105,8 +105,6 @@ namespace api_ecres.Controllers
                 return BadRequest("Invalid username or password");
               }
 
-              // User is authenticated, you can generate a token or set a session/cookie here
-
               return Ok(existingUser);
       
             }

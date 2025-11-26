@@ -6,77 +6,13 @@
 
             </div>
             <div class="sb-sidenav-menu-heading">Menu</div>
-            <!-- <a class="nav-link" routerLink="Home">
-                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                Dashboard
-            </a> -->
+
             <a class="nav-link" routerLink="/home">
                 <div class="sb-nav-link-icon"><i class="fas fa-home"></i></div>
                 Homepage
             </a>
             <div class="sb-sidenav-menu-heading">Modul</div>
-            <!-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts"
-                aria-expanded="false" aria-controls="collapseLayouts">
-                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                Belian Bulanan
-                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-            </a>
-            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
-                data-bs-parent="#sidenavAccordion">
-                <nav class="sb-sidenav-menu-nested nav">
-                    <a class="nav-link" [routerLink]="['/UserList']">Senarai Pengguna</a>
-                </nav>
-            </div>
-            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
-                data-bs-parent="#sidenavAccordion">
-                <nav class="sb-sidenav-menu-nested nav">
-                    <a class="nav-link" routerLink="TaxList">Senarai Cukai</a>
-                </nav>
-            </div>
-            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
-                data-bs-parent="#sidenavAccordion">
-                <nav class="sb-sidenav-menu-nested nav">
-                    <a class="nav-link" routerLink="Home">Senarai Getah</a>
-                </nav>
-            </div>
-            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages"
-                aria-expanded="false" aria-controls="collapsePages">
-                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                Pengurusan
-                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-            </a>
-            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo"
-                data-bs-parent="#sidenavAccordion">
-                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-                        data-bs-target="#pagesCollapseAuth" aria-expanded="false"
-                        aria-controls="pagesCollapseAuth">
-                        Pengguna
-                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                    </a>
-                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne"
-                        data-bs-parent="#sidenavAccordionPages">
-                        <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" routerLink="Login">Log Masuk</a>
-                            <a class="nav-link" routerLink="Register">Daftar Pengguna</a>
-                            <a class="nav-link" routerLink="404">Ubah Katalaluan</a>
-                        </nav>
-                    </div>
-                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-                        data-bs-target="#pagesCollapseError" aria-expanded="false"
-                        aria-controls="pagesCollapseError">
-                        Ralat
-                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                    </a>
-                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne"
-                        data-bs-parent="#sidenavAccordionPages">
-                        <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" routerLink="404">404</a>
-                            <a class="nav-link" routerLink="500">500</a>
-                        </nav>
-                    </div>
-                </nav>
-            </div> -->
+
 
             <div *ngIf="role === 'user'">
             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapse1"
@@ -100,7 +36,6 @@
             </div>
 
 
-
             <div *ngIf="role === 'admin'">
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapse2"
                     aria-expanded="false" aria-controls="collapse2">
@@ -122,22 +57,6 @@
 
 
 
-            <!-- <a class="nav-link" routerLink="/addContract">
-                <div class="sb-nav-link-icon"><i class="fa-solid fa-plus"></i></div>
-                Add Contract
-            </a>
-
-            <a class="nav-link" routerLink="/draft">
-                <div class="sb-nav-link-icon"><i class="fa-solid fa-pencil"></i></div>
-                Draft
-            </a>
-
-
-            <a class="nav-link" routerLink="/registeredContract">
-                <div class="sb-nav-link-icon"><i class="fa-solid fa-list"></i></div>
-                Registered Contract
-            </a> -->
-
             <div *ngIf="role === 'user'">
             <a class="nav-link" routerLink="/changePassword">
                 <div class="sb-nav-link-icon"><i class="fa-solid fa-unlock-keyhole"></i></div>
@@ -152,15 +71,6 @@
             </a>
             </div>
 
-            <!-- <a class="nav-link" routerLink="/addCompany">
-                <div class="sb-nav-link-icon"><i class="fa-solid fa-plus"></i></div>
-                Add Company
-            </a>
-
-            <a class="nav-link" routerLink="/companyList">
-                <div class="sb-nav-link-icon"><i class="fa-solid fa-list"></i></div>
-                List Company
-            </a> -->
 
             <div *ngIf="role === 'admin'">
             <a class="nav-link" routerLink="/addUserManual">
@@ -185,45 +95,6 @@
                 <div class="sb-nav-link-icon"><i class="fa-solid fa-right-from-bracket"></i></div>
                 Logout
             </a>
-
-
-            <!-- <a class="nav-link" routerLink="/showUserManual">
-                <div class="sb-nav-link-icon"><i class="fa-solid fa-list"></i></div>
-                Show User Manual
-            </a> -->
-
-
-
-            <!-- <a class="nav-link" href="charts.html">
-                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                Belian 
-            </a>
-
-            <a class="nav-link" href="charts.html">
-                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-               Jualan
-            </a>
-
-            <a class="nav-link" href="charts.html">
-                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                Belian Pengguna
-            </a>
-
-            <a class="nav-link" href="charts.html">
-                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                Belian Pembahagian
-            </a> -->
-
-
-            <!-- <div class="sb-sidenav-menu-heading">Addons</div>
-            <a class="nav-link" href="charts.html">
-                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                Charts
-            </a>
-            <a class="nav-link" href="tables.html">
-                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                Tables
-            </a> -->
 
         </div>
     </div>

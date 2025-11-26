@@ -135,7 +135,7 @@ export class RegisteredContractComponent implements OnInit {
   
 
   
-  // Function to format dates to dd/mm/yyyy
+  // format dates to dd/mm/yyyy
   private formatDate(date: Date): string {
     const d = new Date(date);
     const day = String(d.getDate()).padStart(2, '0');

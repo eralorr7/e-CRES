@@ -21,19 +21,6 @@ namespace api_ecres.Controllers
       _context = context;
     }
 
-    // GET: api/TblContracts
-    /* [HttpGet]
-     public async Task<ActionResult<IEnumerable<TblContract>>> GetTblContracts()
-     {
-       if (_context.TblContracts == null)
-       {
-           return NotFound();
-       }
-         return await _context.TblContracts.ToListAsync();
-     }*/
-
-
-
 
   [HttpGet]
 public async Task<IActionResult> GetTblContracts()
@@ -86,7 +73,7 @@ public async Task<IActionResult> GetTblContracts()
       shipmentTermId = c.ShipmentTermId,
       shipmentTerm = _context.TblShipmentTerms
             .Where(y => y.ShipmentTermId == c.ShipmentTermId)
-            .Select(y => y.ShipmentTerm) // Get the actual Shipment Term name
+            .Select(y => y.ShipmentTerm) 
             .FirstOrDefault(),
       otherTerm = c.OtherTerm,
         placeFactoryPort = c.PlaceFactoryPort,
@@ -101,8 +88,6 @@ public async Task<IActionResult> GetTblContracts()
 }
 
 
-    
-
     [HttpGet]
     public async Task<IActionResult> GetTblContractByStatus(int statusId)
     {
@@ -110,24 +95,22 @@ public async Task<IActionResult> GetTblContracts()
       {
         return NotFound("Contracts table not found.");
       }
-
-      // ✅ Fetch all rubber types once
+ 
       var rubberTypes = await _context.TblRubberTypes.ToListAsync();
 
       var contracts = await _context.TblContracts
           .Where(c => c.StatusId == statusId)
-          .ToListAsync(); // ✅ Fetch contracts first
+          .ToListAsync(); 
 
       var result = contracts.Select(c =>
       {
-        // ✅ Convert RubberId (string) to a list of integers
+
         var rubberIdList = c.RubberId?.Split(',')
-            .Select(id => int.TryParse(id, out int num) ? num : (int?)null) // Convert to int safely
-            .Where(num => num.HasValue) // Remove null values
-            .Select(num => num.Value) // Convert nullable int to int
+            .Select(id => int.TryParse(id, out int num) ? num : (int?)null) 
+            .Where(num => num.HasValue) 
+            .Select(num => num.Value) 
             .ToList() ?? new List<int>();
 
-        // ✅ Get rubber type names
         var rubberTypeList = rubberTypes
             .Where(y => rubberIdList.Contains(y.RubberId))
             .Select(y => y.RubberType)
@@ -153,7 +136,6 @@ public async Task<IActionResult> GetTblContracts()
           month2 = c.Month2,
           buyerSeller = c.BuyerSeller,
           rubberId = c.RubberId,
-          rubberTypes = rubberTypeList, // ✅ Corrected rubberType
           remarksCentrifugedLatex = c.RemarksCentrifugedLatex,
           quantity = c.Quantity,
           currency = c.Currency,
@@ -177,14 +159,12 @@ public async Task<IActionResult> GetTblContracts()
     }
 
 
-
-
     [HttpGet]
     public async Task<IActionResult> GetTblContractByStatus1(int statusId)
     {
       var currentDate = DateTime.UtcNow;
 
-      // ✅ Fetch contracts first
+      // Fetch contracts first
       var contracts = await _context.TblContracts
           .Where(c => c.StatusId == 2 &&
                       c.CreatedDate.HasValue &&
@@ -197,13 +177,13 @@ public async Task<IActionResult> GetTblContracts()
         return NotFound($"No contracts found with status ID: {statusId}");
       }
 
-      // ✅ Fetch all related data
+      // Fetch all related data
       var companies = await _context.TblCompanies.ToListAsync();
       var shipments = await _context.TblShipments.ToListAsync();
       var shipmentTerms = await _context.TblShipmentTerms.ToListAsync();
       var rubberTypes = await _context.TblRubberTypes.ToListAsync();
 
-      // ✅ Convert to response model
+      // Convert to response model
       var result = contracts.Select(c =>
       {
         var rubberIdList = c.RubberId?.Split(',')
@@ -256,16 +236,14 @@ public async Task<IActionResult> GetTblContracts()
     [HttpGet]
     public async Task<IActionResult> SearchTblContractByStatus(int statusId, string contractNo, string? contractType = null, string? companyName = null)
     {
-      // Check if contractNo is provided, if not return a BadRequest
+
       if (string.IsNullOrEmpty(contractNo))
       {
         return BadRequest("ContractNo is required.");
       }
 
-      // Set current date
       var currentDate = DateTime.UtcNow;
 
-      // Start building the query with status and date filters
       var contractQuery = _context.TblContracts
           .Where(c => c.StatusId == 2 &&
                       c.CreatedDate.HasValue &&
@@ -386,7 +364,7 @@ public async Task<IActionResult> GetTblContracts()
               updatedDate = c.UpdatedDate,
               resubmitDate = c.ResubmitDate,
             })
-            .FirstOrDefaultAsync(); // Use FirstOrDefaultAsync to get a single contract
+            .FirstOrDefaultAsync(); 
 
         if (tblContract == null)
         {
@@ -566,24 +544,24 @@ public async Task<IActionResult> GetTblContracts()
     [HttpGet("{companyId}")]
     public async Task<IActionResult> GetTblContractByCompanyId(int companyId)
     {
-      // ✅ Pre-fetch related data to reduce DB calls
+      // Pre-fetch related data to reduce DB calls
       var companies = await _context.TblCompanies.ToListAsync();
       var shipments = await _context.TblShipments.ToListAsync();
       var shipmentTerms = await _context.TblShipmentTerms.ToListAsync();
       var rubberTypes = await _context.TblRubberTypes.ToListAsync();
 
-      // ✅ Fetch contracts first
+      //  Fetch contracts first
       var tblContracts = await _context.TblContracts
           .Where(x => x.CompanyId == companyId && (x.StatusId == 2 || x.StatusId == null))
           .OrderByDescending(x => x.ContractId)
-          .ToListAsync(); // ✅ Execute before transformations
+          .ToListAsync(); // Execute before transformations
 
       if (!tblContracts.Any())
       {
         return NotFound("No contracts found for the specified company.");
       }
 
-      // ✅ Convert to response model
+      // Convert to response model
       var result = tblContracts.Select(x =>
       {
         var rubberIdList = x.RubberId?.Split(',')
@@ -611,7 +589,7 @@ public async Task<IActionResult> GetTblContracts()
           month2 = x.Month2,
           buyerSeller = x.BuyerSeller,
           rubberId = x.RubberId,
-          rubberTypes = rubberTypeList, // ✅ Fixed rubber type display
+          rubberTypes = rubberTypeList,
           remarksCentrifugedLatex = x.RemarksCentrifugedLatex,
           quantity = x.Quantity,
           currency = x.Currency,
@@ -783,8 +761,6 @@ public async Task<IActionResult> GetTblContracts()
 
           return NoContent();
         }
-
-
 
 
     [HttpPut("{id}")]

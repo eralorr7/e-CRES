@@ -9,33 +9,33 @@ namespace api_ecres.Controllers
 {
 
 
-    [Route("api/[controller]/[action]")]
-    [ApiController]
-    public class EmailController : ControllerBase
-    {
-      private readonly EcresMreContext _context;
+  [Route("api/[controller]/[action]")]
+  [ApiController]
+  public class EmailController : ControllerBase
+  {
+    private readonly EcresMreContext _context;
     private readonly IConfiguration _config;
 
-    public EmailController(EcresMreContext context , IConfiguration config)
+    public EmailController(EcresMreContext context, IConfiguration config)
     {
-        _context = context;
+      _context = context;
       _config = config;
-      }
+    }
 
-      [HttpGet("getAllEmailCompanies")]
-      public async Task<IActionResult> GetAllEmailCompanies()
-      {
-        var companies = await _context.TblCompanies
-            .Where(x => x.Status == true)
-            .Select(x => new
-            {
-              companyId = x.CompanyId,
-              email1 = x.Email1
-            })
-            .ToListAsync();
+    [HttpGet("getAllEmailCompanies")]
+    public async Task<IActionResult> GetAllEmailCompanies()
+    {
+      var companies = await _context.TblCompanies
+          .Where(x => x.Status == true)
+          .Select(x => new
+          {
+            companyId = x.CompanyId,
+            email1 = x.Email1
+          })
+          .ToListAsync();
 
-        return Ok(companies);
-      }
+      return Ok(companies);
+    }
 
 
     [HttpPost("sendEmailsToCompanies")]
@@ -173,8 +173,6 @@ namespace api_ecres.Controllers
       // Return success status with success message
       return Ok(new { message = "Emails sent successfully to all addresses." });
     }
-
-
 
   }
 }

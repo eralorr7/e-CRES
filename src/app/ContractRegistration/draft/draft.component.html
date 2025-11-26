@@ -14,11 +14,6 @@
         <div class="list-container" class="table-responsive">
           <table mat-table [dataSource]="dataSource" matSort class="centered-table">
 
-            <!-- <ng-container matColumnDef="id">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
-                <td mat-cell *matCellDef="let row; let i = index"> {{i + 1}}</td>
-              </ng-container> -->
-
             <ng-container matColumnDef="contractId">
               <th mat-header-cell *matHeaderCellDef mat-sort-header> Contract Id </th>
               <td mat-cell *matCellDef="let row"> {{row.contractId}}</td>

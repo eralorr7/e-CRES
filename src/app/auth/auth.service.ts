@@ -13,7 +13,7 @@ import { UserMre } from '../models/userMre';
 export class AuthService {
   baseApiUrl: string = environment.baseApiUrl;
 
-  // Separate subjects for user and admin
+
   private userSource = new BehaviorSubject<Company>(null as any);
   private adminUserSource = new BehaviorSubject<UserMre>(null as any);
 

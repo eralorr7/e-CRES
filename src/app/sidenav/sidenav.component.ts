@@ -28,14 +28,6 @@ export class SidenavComponent {
 
   constructor(private router: Router, private toastr: ToastrService, public authService: AuthService, public dialog: MatDialog, private companyService: CompanyService,) { }
 
-  // ngOnInit(): void {
-
-  //   this.authService.currentUser.subscribe(res => { 
-  //       this.company = res;
-  //       console.log('Logged in user:', res);
-  //   });
-
-  // }
 
   ngOnInit(): void {
     // Get the current role

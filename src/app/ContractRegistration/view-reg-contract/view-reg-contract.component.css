@@ -85,9 +85,7 @@ thead {
     font-weight: bold;
   }
 
-  /*
-    Label the data
-    */
+  
   td:nth-of-type(1):before {
     content: "Name";
   }

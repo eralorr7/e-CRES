@@ -1,12 +1,12 @@
 .table-container {
     display: flex;
-    justify-content: center; /* Center horizontally */
+    justify-content: center; 
 }
 
 .centered-table {
-    margin: auto; /* Center the table */
-    width: 100%; /* Optional: make the table responsive */
-    max-width: 800px; /* Optional: limit max width */
+    margin: auto; 
+    width: 100%; 
+    max-width: 800px; 
 }
 
 

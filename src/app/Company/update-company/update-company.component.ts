@@ -53,30 +53,8 @@ export class UpdateCompanyComponent {
     });
   }
 
-
-  // validForm() {
-  //   if (
-  //     this.company.companyName == null || this.company.companyName == "" ||
-  //     this.company.add1 == null || this.company.add1 == "" ||
-  //     this.company.email1 == null || this.company.email1 == "" ||
-  //     this.company.username == null || this.company.username == "" ||
-  //     this.company.password == null || this.company.password == "" ||
-  //     this.company.status == null
-  //   ) {
-  //     this.toastr.warning('Please fill in all fields');
-  //     return false;
-  //   }
-  //   return true;
-  // }
-  
-  
   
   onSubmit() {
-
-    // if (!this.validForm()) {
-    //   this.errorMes = true
-    // } else {
-    //   this.errorMes = false
 
     const companyId = this.company.companyId;
 

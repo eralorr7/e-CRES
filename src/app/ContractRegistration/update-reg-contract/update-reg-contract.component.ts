@@ -150,7 +150,7 @@ Overseas contract:
 
 
     const contractDate = new Date(this.ecres.contractDate); // Get the selected contract date
-    const currentDate = new Date(); // Get the current date
+    const currentDate = new Date();
 
     // Calculate the difference in trading days between the contract date and current date
     const tradingDaysDiff = this.calculateTradingDays(contractDate, currentDate);

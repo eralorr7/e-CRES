@@ -1,5 +1,4 @@
-export interface Company {
-    
+export interface Company { 
     companyId: number;
     licenseNo: string;
     type: string;
@@ -23,5 +22,4 @@ export interface Company {
     PlainPassword: string;
     licenseCategory: string;
     updatedOn: Date;
-    
 }

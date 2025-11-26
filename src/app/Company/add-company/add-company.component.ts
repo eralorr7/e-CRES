@@ -36,7 +36,7 @@ export class AddCompanyComponent implements OnInit {
   validForm() {
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   
-    // Check if all required fields are filled
+    // Check  all required fields are filled
     if (
       !this.company.pic || 
       !this.company.email1 || 
@@ -47,13 +47,13 @@ export class AddCompanyComponent implements OnInit {
       return false;
     }
   
-    // Check if the email contains multiple addresses separated by ',' or ';'
+    // Check  the email contains multiple addresses separated by ',' or ';'
     if (/[,;]/.test(this.company.email1)) {
       this.toastr.warning('The email1 field must contain only one email address');
       return false;
     }
   
-    // Check if the email address format is valid
+    // Check  email address format is valid
     if (!emailPattern.test(this.company.email1)) {
       this.toastr.warning('Please enter a valid email address');
       return false;

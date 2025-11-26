@@ -1,5 +1,6 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace api_ecres.Model;
 
@@ -60,4 +61,11 @@ public partial class TblContract
     public DateTime? UpdatedDate { get; set; }
 
     public DateTime? ResubmitDate { get; set; }
+
+  [NotMapped] public string? CompanyName { get; set; }
+  [NotMapped] public string? ShipmentTypeName { get; set; }
+  [NotMapped] public string? ShipmentTermName { get; set; }
+  [NotMapped] public List<string> RubberTypeNames { get; set; } = new();
+
+
 }

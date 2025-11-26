@@ -48,8 +48,6 @@ namespace api_ecres.Controllers
 
         }
 
-
-
     // GET: api/TblUserMres/5
     [HttpGet("{id}")]
         public async Task<ActionResult<TblUserMre>> GetTblUserMre(int id)
@@ -69,7 +67,6 @@ namespace api_ecres.Controllers
         }
 
         // PUT: api/TblUserMres/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutTblUserMre(int id, TblUserMre tblUserMre)
         {
@@ -100,7 +97,6 @@ namespace api_ecres.Controllers
         }
 
         // POST: api/TblUserMres
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<TblUserMre>> PostTblUserMre(TblUserMre tblUserMre)
         {

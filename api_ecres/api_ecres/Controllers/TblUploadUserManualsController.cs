@@ -35,7 +35,6 @@ namespace api_ecres.Controllers
         return BadRequest("No file was provided.");
       }
 
-      //var fileExtension = Path.GetExtension(file.FileName);
       var fileName = $"{id}_{details.UserManual}";
       var filePath = Path.Combine(Directory.GetCurrentDirectory(), @"wwwroot\userManual", fileName);
 
@@ -49,7 +48,6 @@ namespace api_ecres.Controllers
       }
       catch (Exception ex)
       {
-        // Log the exception (ex) here if logging is set up in your project
         return StatusCode(500, "An error occurred while uploading the file.");
       }
 
@@ -86,7 +84,6 @@ namespace api_ecres.Controllers
         }
 
         // PUT: api/TblUploadUserManuals/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutTblUploadUserManual(int id, TblUploadUserManual tblUploadUserManual)
         {
@@ -115,10 +112,6 @@ namespace api_ecres.Controllers
 
             return NoContent();
         }
-
-        // POST: api/TblUploadUserManuals
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-
 
 
         [HttpPost]

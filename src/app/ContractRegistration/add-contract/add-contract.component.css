@@ -9,7 +9,6 @@
   font-weight: bold;
 }
 
-/* Adjust spacing and alignment */
 .form-group {
   margin-bottom: 1rem;
 }
@@ -24,7 +23,6 @@
 
 .month-year-picker {
   width: 300px;
-  /* Adjust width as needed */
 }
 
 
@@ -50,7 +48,7 @@
 
 .radio-group-flex {
   display: flex;
-  gap: 100px; /* Controls the space between buttons */
+  gap: 100px; 
 }
 
 .error-message {

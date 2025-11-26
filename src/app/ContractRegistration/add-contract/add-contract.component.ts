@@ -96,21 +96,6 @@ Overseas contract:
   }
 
 
-  // onRubberSelectionChange(event: Event, rubberId: number) {
-  //   const checked = (event.target as HTMLInputElement).checked;
-
-  //   if (checked) {
-  //     this.selectedRubberIds.push(rubberId);
-  //   } else {
-  //     this.selectedRubberIds = this.selectedRubberIds.filter(id => id !== rubberId);
-  //   }
-
-  //   // Convert selected IDs to a comma-separated string for database storage
-  //   this.ecres.rubberId = this.selectedRubberIds.join(',');
-
-  // }
-
-
   onRubberSelectionChange(event: any, rubberId: number) {
     if (event.target.checked) {
       // Add rubberId if checked

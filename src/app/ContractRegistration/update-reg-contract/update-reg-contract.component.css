@@ -9,7 +9,7 @@
   font-weight: bold;
 }
 
-/* Adjust spacing and alignment */
+
 .form-group {
   margin-bottom: 1rem;
 }
@@ -24,33 +24,31 @@
 
 .month-year-picker {
   width: 300px;
-  /* Adjust width as needed */
 }
 
 ::ng-deep .custom-tooltip {
-  white-space: pre-wrap;      /* Ensures newlines are respected */
-  max-width: 500px !important; /* Increase the max-width for a larger box */
-  word-wrap: break-word;      /* Break long words if necessary */
-  padding: 10px;              /* Adds padding for better readability */
-  font-size: 14px;            /* Adjust font size */
-  position: unset !important; /* Ensure the tooltip is not constrained by its parent */
+  white-space: pre-wrap;    
+  max-width: 500px !important; 
+  word-wrap: break-word;      
+  padding: 10px;             
+  font-size: 14px;          
+  position: unset !important;
 }
 
 
 ::ng-deep .destination-tooltip {
-  white-space: pre-wrap;      /* Ensures newlines are respected */
-  max-width: 500px !important; /* Increase the max-width for a larger box */
-  word-wrap: break-word;      /* Break long words if necessary */
-  padding: 10px;              /* Adds padding for better readability */
-  font-size: 14px;            /* Adjust font size */
-  position: unset !important; /* Ensure the tooltip is not constrained by its parent */
+  white-space: pre-wrap;     
+  max-width: 500px !important;
+  word-wrap: break-word;    
+  padding: 10px;              
+  font-size: 14px;            
+  position: unset !important; 
 }
-
 
 
 .radio-group-flex {
   display: flex;
-  gap: 100px; /* Controls the space between buttons */
+  gap: 100px;
 }
 
 .error-message {

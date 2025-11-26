@@ -50,7 +50,6 @@ namespace api_ecres.Controllers
         }
 
         // PUT: api/TblShipmentTerms/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutTblShipmentTerm(int id, TblShipmentTerm tblShipmentTerm)
         {
@@ -81,7 +80,6 @@ namespace api_ecres.Controllers
         }
 
         // POST: api/TblShipmentTerms
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<TblShipmentTerm>> PostTblShipmentTerm(TblShipmentTerm tblShipmentTerm)
         {

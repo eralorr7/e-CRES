@@ -18,13 +18,10 @@ export class CompanyListComponent implements OnInit {
 
   displayedColumns: string[] = [
     'companyId',
-    // 'bil',
     'companyName',
     'pic',
-    // 'email',
     'email1',
     'username',
-    // 'password',
     'status',
     'action'
   ];

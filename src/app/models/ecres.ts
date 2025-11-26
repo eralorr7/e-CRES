@@ -1,5 +1,4 @@
 export interface Ecres {
-    
     contractId: number;
     companyId: string;
     companyName: string;

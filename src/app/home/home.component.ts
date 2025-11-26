@@ -23,14 +23,6 @@ export class HomeComponent implements OnInit {
   constructor(private authService: AuthService, public dialog: MatDialog, private toastr: ToastrService, private contractRegistrationService: ContractRegistrationService,) { }
 
 
-  // ngOnInit(): void {
-  //   this.authService.currentUser.subscribe(res => { 
-  //       this.company = res;
-  //       console.log('Logged in user:', res);
-  //   });
-
-  // }
-
   ngOnInit(): void {
     // Get the current role
     this.authService.currentRole.subscribe(role => {
@@ -49,8 +41,5 @@ export class HomeComponent implements OnInit {
       }
     });
   }
-
-
-
 
 }

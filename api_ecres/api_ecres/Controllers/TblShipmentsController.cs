@@ -20,17 +20,7 @@ namespace api_ecres.Controllers
             _context = context;
         }
 
-    // GET: api/TblShipments
-    /*[HttpGet]
-    public async Task<ActionResult<IEnumerable<TblShipment>>> GetTblShipments()
-    {
-      if (_context.TblShipments == null)
-      {
-          return NotFound();
-      }
-        return await _context.TblShipments.ToListAsync();
-    }
-*/
+
     [HttpGet]
     public async Task<ActionResult<IEnumerable<TblShipment>>> GetTblShipments()
     {
@@ -42,7 +32,6 @@ namespace api_ecres.Controllers
       var filteredShipments = await _context.TblShipments
                                       .Where(s => s.Status == true)
                                       .ToListAsync();
-
 
       return Ok(filteredShipments);
     }
@@ -67,7 +56,6 @@ namespace api_ecres.Controllers
         }
 
         // PUT: api/TblShipments/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutTblShipment(int id, TblShipment tblShipment)
         {
@@ -98,7 +86,6 @@ namespace api_ecres.Controllers
         }
 
         // POST: api/TblShipments
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<TblShipment>> PostTblShipment(TblShipment tblShipment)
         {

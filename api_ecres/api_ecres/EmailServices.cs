@@ -95,7 +95,8 @@ namespace api_ecres
         {
           // Use Port 25 (No Authentication, No Encryption)
           //await client.ConnectAsync("10.4.137.105", 25, SecureSocketOptions.None);
-          await client.ConnectAsync("10.4.137.18", 25, SecureSocketOptions.None).ConfigureAwait(false);
+          //await client.ConnectAsync("10.4.137.18", 25, SecureSocketOptions.None).ConfigureAwait(false);
+          await client.ConnectAsync("postmaster2.mygovuc.gov.my", 25, SecureSocketOptions.None).ConfigureAwait(false);
 
           // Send email
           await client.SendAsync(emailMessage);
