@@ -34,7 +34,17 @@ app.UseHttpsRedirection();
 
 app.UseResponseCompression();
 
-app.UseCors(policy => policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
+//app.UseCors(policy => policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
+
+app.UseCors(policy => policy
+    .WithOrigins(
+        "http://localhost:4200",
+        "https://www5.lgm.gov.my"
+    )
+    .AllowAnyMethod()
+    .AllowAnyHeader()
+    .AllowCredentials()
+);
 
 app.UseAuthorization();
 
